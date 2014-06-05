@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Trees with D3.js! </title>
+	
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+	<script >
+
+	var treeData = 
+
+	{'name': 'amniotes',
+	'value': 100,
+	'children': [
+
+
+		{'name': 'reptiles',
+		'value': 100,
+		'children': [
+
+
+				{'name': 'turtles',
+				'value': 100,
+				'children': []},
+
+
+				{'name': 'lizards',
+				'value': 100,
+				'children': []},
+
+
+				{'name': 'crocodiles and dinosaurs',
+				'value': 100,
+				'children': [
+
+
+				{'name': 'crocodiles',
+				'value': 100,
+				'children': []},
+
+				{'name': 'dinosaurs',
+				'value': 100,
+				'children': [
+
+					{'name': 'birds',
+					'value': 100,
+					'children': [
+
+
+						{'name': 'ostriches',
+						'value': 100,
+						'children': []},
+
+
+						{'name': 'sea birds',
+						'value': 100,
+						'children': [
+
+
+							{'name': 'cormorants',
+							'value': 100,
+							'children': [
+
+
+								{'name': 'loons',
+								'value': 100,
+								'children': [
+
+
+									{'name': 'grebes',
+									'value': 100,
+									'children': []},
+
+								]},
+
+							]},
+
+
+							{'name': 'pelicans',
+							'value': 100,
+							'children': []},
+
+						]},
+
+
+						{'name': 'passerines',
+						'value': 100,
+						'children': []},
+
+					]},
+
+
+				]},
+
+
+
+				]},
+
+
+
+
+
+
+
+
+
+		]},
+
+
+
+
+
+
+		{'name': 'mammals',
+		'value': 100,
+		'children': [
+
+		{'name': 'carnivora',
+		'value': 100,
+		'children': [
+
+			{'name': 'canids',
+			'value': 100,
+			'children': [
+
+				{'name': 'dogs',
+				'value': 100,
+				'children': []},
+
+				{'name': 'foxes',
+				'value': 100,
+				'children': []}
+
+			]},
+
+		{'name': 'kitties',
+				'value': 100,
+				'children': [
+
+				{'name': 'lions',
+				'value': 100,
+				'children': []},
+
+				{'name': 'tigers',
+				'value': 100,
+				'children': []},
+
+				{'name': 'ocelots',
+				'value': 100,
+				'children': []},
+
+				{'name': 'housecats?',
+				'value': 100,
+				'children': []},
+
+				]},
+
+			{'name': 'pinnipeds',
+			'value': 100,
+			'children': [
+
+				{'name': 'sea lions',
+				'value': 100,
+				'children': []},
+				
+				{'name': 'seals',
+				'value': 100,
+				'children': [
+
+					{'name': 'fur seal',
+					'value': 100,
+					'children': []},
+
+					{'name': 'cute little baby seal',
+					'value': 100,
+					'children': []},
+
+				]},
+
+			]}
+
+
+		]},
+
+		{'name': 'cetaceans',
+		'value': 100,
+		'children': [
+
+			{'name': 'odontocetes',
+			'value': 100,
+			'children': [
+
+				{'name': 'dolphins',
+					'value': 100,
+					'children': []},
+
+				{'name': 'orcas',
+				'value': 100,
+				'children': []},
+
+				{'name': 'pilot whales',
+					'value': 100,
+					'children': []},
+
+
+			]},
+
+
+			{'name': 'other whales?',
+			'value': 100,
+			'children': [
+
+				{'name': 'humpbacks',
+					'value': 100,
+					'children': []},
+
+				{'name': 'blue whales',
+				'value': 100,
+				'children': []},
+
+			]}
+
+
+		]},
+
+
+		{'name': 'bats!',
+				'value': 100,
+				'children': [
+
+				{'name': 'micro ones',
+				'value': 100,
+				'children': [
+
+					{'name': 'ugly bats',
+					'value': 100,
+					'children': []},
+
+					{'name': 'cute bats',
+					'value': 100,
+					'children': []},
+				]},
+
+				{'name': 'macro ones?',
+				'value': 100,
+				'children': [
+
+					{'name': 'flying foxes',
+					'value': 100,
+					'children': []},
+
+					{'name': 'probably fruit bats?',
+					'value': 100,
+					'children': [
+
+						{'name': 'apple bats',
+						'value': 100,
+						'children': []},
+
+						{'name': 'orange bats',
+						'value': 100,
+						'children': []},
+
+						{'name': 'banana bats',
+						'value': 100,
+						'children': []},
+
+					]},
+
+				]},
+
+			]},
+
+
+		{'name': 'elephants',
+		'value': 100,
+		'children': [
+
+			{'name': 'snuffeluppegi',
+				'value': 100,
+				'children': []},
+
+			{'name': 'mammoths',
+			'value': 100,
+			'children': [
+
+
+				{'name': 'wooly',
+				'value': 100,
+				'children': []},
+
+				{'name': 'silky',
+				'value': 100,
+				'children': [
+
+					{'name': 'extra silky',
+					'value': 100,
+					'children': []},
+
+
+				]},
+
+
+
+			]},
+
+
+		]},
+
+
+
+		{'name': 'primates',
+		'value': 100,
+		'children': [
+
+			{'name': 'humans',
+			'value': 100,
+			'children': []},
+
+			{'name': 'chimps',
+			'value': 100,
+			'children': [
+
+				{'name': 'bonobos',
+				'value': 100,
+				'children': []},
+
+				{'name': 'pan troglodyes',
+				'value': 100,
+				'children': []}
+			]},
+
+			{'name': 'gorrillas',
+			'value': 100,
+			'children': []},
+
+			{'name': 'orangs',
+			'value': 100,
+			'children': []}
+
+
+		]}
+
+
+	]}
+
+]}
+
+
+	</script>
+	<script >
+
+
+var width = 2400;
+var height = 1800;
+
+var canvas = d3.select('body').append('svg')
+	.attr('width', width)
+	.attr('height', height)
+	.append('g')
+		.attr('transform', 'translate(50, 50)');
+
+
+var pack = d3.layout.pack()
+	.size([width, height - 50])
+	.padding(10);
+
+	var nodes = pack.nodes(treeData);
+
+
+var node = canvas.selectAll(".node")
+	.data(nodes)
+	.enter()
+	.append('g')
+		.attr("class", "node")
+		.attr("transform", function (d) {return "translate(" + d.y + "," + d.x + ")";} );
+
+
+node.append("circle")
+	.attr("r", function(d) {return d.r;})
+	.attr("fill", "green")
+	.attr("opacity", 0.25)
+	.attr("stroke", "#ADADAD")
+	.attr("stroke-width", "2");
+
+node.append("text")
+	.text(function(d) {return d.name }) 
+
+
+var diagonal = d3.svg.diagonal();
+
+canvas.selectAll(".link")
+	.data(links)
+	.enter()
+	.append("path")
+	.attr("class", "link")
+	.attr("fill", "none")
+	.attr("stroke", "#ADADAD")
+	.attr('d', diagonal);
+
+	</script>
+	
+</body>
+
+</html>

@@ -1,5 +1,3 @@
-var makeTreeViz = function(treeData) {
-
 var width = 3200;
 var height = 1800;
 
@@ -9,11 +7,11 @@ var canvas = d3.select('body').append('svg')
 	.append('g')
 		.attr('transform', 'translate(50, 50)');
 
-var tree = d3.layout.tree()
+var tree = d3.layout.cluster()
 	.size([2900, 1400]);
 
-	var nodes = tree.nodes(treeData);
-	var links = tree.links(nodes);
+	var nodes = tree.nodes(siphData.nodes);
+	var links = tree.links(nodes[0]);
 
 var node = canvas.selectAll(".node")
 	.data(nodes)
@@ -26,14 +24,14 @@ var node = canvas.selectAll(".node")
 
 node.append("circle")
 	.attr("r", function(d) {return d.r;})
-	.attr("fill", "green")
-	.attr("opacity", 0.25)
-	.attr("stroke", "#ADADAD")
-	.attr("stroke-width", "2");
+	// .attr("fill", "green")
+	.attr("opacity", 0.9)
+	// .attr("stroke", "#ADADAD")
+	.attr("stroke-width", "4");
 
-node.append("text").attr("class", "texticles")
+node.append("text")
 	.text(function(d) {return d.name }) 
-	
+	.style("color", "black")
 
 var diagonal = d3.svg.diagonal();
 
@@ -42,14 +40,11 @@ canvas.selectAll(".link")
 	.enter()
 	.append("path")
 	.attr("class", "link")
-	// .style("fill", "none")
-	// .style("stroke", "#FF0000")
-	.attr('d', d3.svg.diagonal())
-	
+	.attr("fill", "none")
+	// .attr("stroke", "#ADADAD")
+	.attr('d', d3.svg.diagonal());
 
-}
 
-makeTreeViz(treeData);
 
 
 
